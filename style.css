@@ -1,0 +1,142 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0b0f19;
+  color: #f1f5f9;
+  line-height: 1.5;
+}
+
+/* Header Section */
+.page-header {
+  background: linear-gradient(135deg, #111827 0%, #1e1b4b 100%);
+  border-bottom: 2px solid #312e81;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.25rem;
+  letter-spacing: 2px;
+  color: #38bdf8;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Adjacent Sibling Combinator (+) */
+.page-header h1 + p {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* Main CSS Grid Layout */
+.showcase-grid {
+  max-width: 1140px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Product Card (Flexbox Column) */
+.product-card {
+  background-color: #131a2a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover Pseudo-Class with Neon Glow */
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.18);
+}
+
+/* Child Combinator (>) */
+.product-card > img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin-bottom: 1.25rem;
+}
+
+/* Add to Cart Button */
+.cart-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button Pseudo-Classes */
+.cart-btn:hover {
+  background-color: #4f46e5;
+}
+
+.cart-btn:active {
+  transform: scale(0.97);
+}
+
+.cart-btn:focus-visible {
+  outline: 3px solid #818cf8;
+  outline-offset: 2px;
+}
+
+/* Platform Attribute Selectors */
+.product-card[data-platform="playstation"] {
+  border-top: 4px solid #38bdf8;
+}
+
+.product-card[data-platform="xbox"] {
+  border-top: 4px solid #4ade80;
+}
+
+.product-card[data-platform="nintendo"] {
+  border-top: 4px solid #f87171;
+}
+
+.product-card[data-platform="pc"] {
+  border-top: 4px solid #c084fc;
+}
